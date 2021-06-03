@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.imooc.pojo.vo.CommentLevelCountsVO;
 import com.imooc.pojo.vo.ItemCommentVO;
+import com.imooc.pojo.vo.SearchItemsVO;
 import enums.CommentLevel;
 import enums.YesOrNo;
 import com.imooc.mapper.*;
@@ -157,33 +158,33 @@ public class ItemServiceImpl implements ItemService {
         grid.setRecords(pageList.getTotal());
         return grid;
     }
-//
-//    @Transactional(propagation = Propagation.SUPPORTS)
-//    @Override
-//    public PagedGridResult searhItems(String keywords, String sort, Integer page, Integer pageSize) {
-//
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("keywords", keywords);
-//        map.put("sort", sort);
-//
-//        PageHelper.startPage(page, pageSize);
-//        List<SearchItemsVO> list = itemsMapperCustom.searchItems(map);
-//
-//        return setterPagedGrid(list, page);
-//    }
 
-//    @Transactional(propagation = Propagation.SUPPORTS)
-//    @Override
-//    public PagedGridResult searhItems(Integer catId, String sort, Integer page, Integer pageSize) {
-//        Map<String, Object> map = new HashMap<>();
-//        map.put("catId", catId);
-//        map.put("sort", sort);
-//
-//        PageHelper.startPage(page, pageSize);
-//        List<SearchItemsVO> list = itemsMapperCustom.searchItemsByThirdCat(map);
-//
-//        return setterPagedGrid(list, page);
-//    }
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult searhItems(String keywords, String sort, Integer page, Integer pageSize) {
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("keywords", keywords);
+        map.put("sort", sort);
+
+        PageHelper.startPage(page, pageSize);
+        List<SearchItemsVO> list = itemsMapperCustom.searchItems(map);
+
+        return setterPagedGrid(list, page);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult searhItems(Integer catId, String sort, Integer page, Integer pageSize) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("catId", catId);
+        map.put("sort", sort);
+
+        PageHelper.startPage(page, pageSize);
+        List<SearchItemsVO> list = itemsMapperCustom.searchItemsByThirdCat(map);
+
+        return setterPagedGrid(list, page);
+    }
 
 //    @Transactional(propagation = Propagation.SUPPORTS)
 //    @Override
