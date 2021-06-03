@@ -5,6 +5,7 @@ import com.imooc.pojo.*;
 //import com.imooc.pojo.vo.ItemCommentVO;
 //import com.imooc.pojo.vo.ShopcartVO;
 import com.imooc.pojo.vo.CommentLevelCountsVO;
+import com.imooc.pojo.vo.ShopcartVO;
 import utils.PagedGridResult;
 
 import java.util.List;
@@ -80,7 +81,7 @@ public interface ItemService {
      * @param specIds
      * @return
      */
-//    public List<ShopcartVO> queryItemsBySpecIds(String specIds);
+    public List<ShopcartVO> queryItemsBySpecIds(String specIds);
 
     /**
      * 根据商品规格id获取规格对象的具体信息
