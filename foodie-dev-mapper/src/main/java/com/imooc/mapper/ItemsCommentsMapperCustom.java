@@ -7,7 +7,7 @@
 //
 //import java.util.List;
 //import java.util.Map;
-//
+//@Repository
 //public interface ItemsCommentsMapperCustom extends MyMapper<ItemsComments> {
 //
 //    public void saveComments(Map<String, Object> map);
